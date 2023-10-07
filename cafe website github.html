@@ -1,0 +1,1050 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotspring Cafe</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+img {
+    width: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    z-index: 1;
+}
+
+header .logo a {
+    font-size: 30px;
+    color: white;
+    padding: 15px 30px;
+}
+
+header .logo a span {
+    color: orange;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li a {
+    margin: 5px 20px;
+    font-size: 18px;
+    color: white;
+    padding: 10px 10px;
+}
+
+header nav ul li a:hover {
+    border-bottom: 2px solid white;
+}
+
+        
+        .cart {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background-color: #333333;
+            width: 300px;
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 2;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .cart h3 {
+            color: orange;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        #cart-items {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #cart-items li {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        #cart-total {
+            color: orange;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #clear-cart {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #clear-cart:hover {
+            background-color: #ff6681;
+        }
+
+        /* Responsive Cart Styles */
+        @media (max-width: 768px) {
+            .cart {
+                top: 50px;
+                right: 10px;
+                width: 250px;
+                padding: 15px;
+            }
+            .cart h3 {
+                font-size: 18px;
+            }
+            #cart-items li {
+                font-size: 14px;
+            }
+            #cart-total {
+                font-size: 16px;
+            }
+            #clear-cart {
+                font-size: 14px;
+            }
+        }
+
+/* Content */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, rgba(96, 76, 76, .6), rgba(96, 76, 76, .6)), url("bgcafe.jpg");
+
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.content h2 {
+    font-size: 32px;
+    padding: 5px;
+    color: white;
+}
+
+.content p {
+    font-size: 22px;
+    color: white;
+}
+
+
+/* Menu */
+
+.menu {
+    background-color: #333333;
+    width: 100%;
+}
+
+.menu .menu-header {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-header h3 {
+    color: orange;
+    padding: 10px 30px;
+}
+
+.menu-header h4 {
+    color: orange;
+    padding: 10px 20px;
+}
+
+.menu .menu-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 50px 0;
+    flex-wrap: wrap;
+    background-color: #404040;
+}
+
+.menu .menu-content .hot-coffees,
+.cold-coffees,
+.frappucino-coffees {
+    width: 250px;
+}
+
+.menu .menu-content .hot-coffees .hot-coffees-image img {
+    border-radius: 50%;
+}
+
+.menu .menu-content .cold-coffees .cold-coffees-image img {
+    border-radius: 50%;
+}
+
+.menu .menu-content .frappucino-coffees .frappucino-coffees-image img {
+    border-radius: 50%;
+}
+
+.menu .menu-content .hot-coffees-body,
+.cold-coffees-body,
+.frappucino-coffees-body {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.menu .menu-content .hot-coffees-body h2,
+.cold-coffees-body h2,
+.frappucino-coffees-body h2 {
+    color: orange;
+}
+
+.menu .menu-content .hot-coffees-body label,
+.cold-coffees-body label,
+.frappucino-coffees-body label {
+    margin-top: 10px;
+    color: white;
+}
+
+
+
+/* Shop */
+
+.shop {
+    background-color: #333333;
+    width: 100%;
+}
+
+.shop .shop-header {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shop-header h3 {
+    color: orange;
+    padding: 10px 30px;
+}
+
+.shop-header h4 {
+    color: orange;
+    padding: 10px 20px;
+}
+
+.shop-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #404040;
+    padding: 50px 0;
+    flex-wrap: wrap;
+}
+
+.shop-box .card {
+    width: 280px;
+    margin: 20px;
+}
+
+.shop-box .card-image {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.shop-box .card-image img:hover {
+    transform: scale(1.1);
+    transition: transform .4s ease-in-out;
+}
+
+.shop-box .card-body {
+    padding: 20px;
+    color: white;
+    border: 3px solid #3B3B3B;
+}
+
+.shop-box .card-body h3 {
+    padding: 10px 0;
+}
+
+.shop-box .card-body i {
+    color: yellow;
+    font-size: 10px;
+    position: relative;
+    bottom: 5px;
+}
+
+.shop-box .card-body .cash {
+    font-size: 22px;
+    margin-left: 90px;
+}
+
+
+/* Contact */
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-top: 2px solid #333333;
+}
+
+.contact .contact-box {
+    flex: 1;
+}
+
+.contact .contact-box .contact-image,
+.contact .contact-box .contact-body {
+    height: 100%;
+}
+
+.contact img {
+    width: 100%;
+    height: 100%;
+}
+
+.contact-image img {
+    opacity: .9;
+}
+
+.contact-body {
+    background-color: #404040;
+    height: 100%;
+    border-left: 2px solid #333333;
+}
+
+.contact-body form {
+    padding: 50px 40px;
+    box-sizing: border-box;
+}
+
+.contact-body h2 {
+    color: orange;
+}
+
+form .form-content {
+    position: relative;
+    margin: 30px 0;
+    border-bottom: 2px solid lightgray;
+}
+
+form .form-content input {
+    width: 100%;
+    height: 40px;
+    padding: 0 5px;
+    font-size: 17px;
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+}
+
+form .form-content label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: gray;
+    transform: translateY(-50%);
+    font-size: 17px;
+    transition: .5s;
+    pointer-events: none;
+}
+
+form .form-content span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: orange;
+    transform: .4s;
+}
+
+form .form-content input:focus~label,
+form .form-content input:valid~label {
+    top: -5px;
+    color: orange;
+}
+
+form .form-content input:focus~span::before,
+form .form-content input:valid~span::before {
+    width: 100%;
+}
+
+.contact-body form button {
+    padding: 10px 20px;
+    font-size: 17px;
+    border: none;
+    background-color: #ff6600;
+    color: white;
+    border: 5px;
+    cursor: pointer;
+    transition: all .4s ease-in;
+}
+
+.contact-body form button:hover {
+    background-color: #ff6681;
+}
+
+
+/* Footer */
+
+
+.footer {
+    background-color: #404040;
+    border-top: 2px solid #333333;
+}
+
+.footer .footer-box {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer .footer-box .social-media a {
+    color: white;
+    background-color: #333333;
+    border-radius: 50%;
+    font-size: 17px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.footer .footer-box .social-media a:hover {
+    opacity: .7;
+    transition: .5s all ease-in-out;
+}
+
+.footer .footer-box .copyright {
+    color: white;
+    font-size: 20px;
+}
+
+.footer .footer-box .brand {
+    color: white;
+    font-size: 20px;
+}
+
+.footer .footer-box .brand span {
+    color: orange;
+}
+
+/* Responsive */
+
+@media(max-width: 992px) {
+
+    /* Header */
+
+    header {
+        flex-direction: column;
+        height: 150px;
+        background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2));
+    }
+
+    .menu-header .logo a {
+        font-size: 25px;
+    }
+
+    header nav ul li a {
+        font-size: 16px;
+        flex-direction: column;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content h2 {
+        font-size: 28px;
+    }
+
+    .content p {
+        font-size: 18px;
+    }
+}
+
+
+@media(max-width: 950px) {
+    .contact .contact-box {
+        flex: 100%;
+    }
+}
+
+@media(max-width: 800px) {
+
+    .menu .menu-content .hot-coffees,
+    .cold-coffees,
+    .frappucino-coffees {
+        margin: 20px;
+    }
+}
+
+@media(max-width: 700px) {
+    .footer .footer-box .social-media a {
+        color: white;
+        background-color: #333333;
+        border-radius: 50%;
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    .footer .footer-box .copyright {
+        color: white;
+        font-size: 15px;
+    }
+
+    .footer .footer-box .brand {
+        color: white;
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 500px) {
+
+    /* header */
+
+    header {
+        height: 130px;
+    }
+
+    header .logo a {
+        font-size: 23px;
+    }
+
+    header nav ul li a {
+        font-size: 13px;
+        flex-direction: column;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /* Content */
+
+    .content h2 {
+        font-size: 23px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+
+    /* footer */
+
+    .footer .footer-box {
+        flex-direction: column;
+    }
+
+    .footer .footer-box .social-media a {
+        color: white;
+        background-color: #333333;
+        border-radius: 50%;
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+    .footer .footer-box .copyright {
+        color: white;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .footer .footer-box .brand {
+        color: white;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+}
+
+
+@media(max-width: 410px) {
+
+    /* header */
+
+    header {
+        height: 120px;
+    }
+
+    header .logo a {
+        font-size: 20px;
+        color: white;
+        padding: 15px 30px;
+    }
+
+    header nav ul li a {
+        font-size: 12px;
+        flex-direction: column;
+        display: inline-block;
+        margin-top: 10px;
+        color: white;
+        padding: 5px 5px;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* content */
+
+    .content h2 {
+        font-size: 20px;
+    }
+
+    .content p {
+        font-size: 13px;
+    }
+
+    .add-to-cart-button {
+    background-color: #ff6600; /* Button background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    transition: background-color 0.3s ease-in-out; /* Smooth background color transition on hover */
+}
+
+.add-to-cart-button:hover {
+    background-color: #ff6681; /* Button background color on hover */
+}
+}
+    </style>
+    
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#">Hotspring <span>Coffee</span></a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <div class="Cart" id="cart" >
+    <h3>Cart</h3>
+    <ul id="cart-items">
+        <!-- Cart items will be dynamically added here -->
+    </ul>
+    <p>Total: <span id="cart-total">0</span> Rs</p>
+                    <button id="clear-cart">Clear Cart</button>
+</div>
+
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h2>Hotspring Cafe </h2>
+        <p>Would you like to start the day with a nice coffee?</p>
+    </div>
+
+    <div class="menu" id="menu">
+        <div class="menu-header">
+            <h3>Menu</h3>
+            <h4>Hotspring Coffee Menu</h4>
+        </div>
+        <div class="menu-content">
+            <div class="hot-coffees">
+                <div class="hot-coffees-image">
+                    <img src="img/hot-coffees.jpg" alt="">
+                </div>
+                <div class="hot-coffees-body">
+                    <h2>Hot Coffees</h2>
+                    <label>Hot coffee and winter morning are the best combination ever !!</label>
+                </div>
+            </div>
+            <div class="cold-coffees">
+                <div class="cold-coffees-image">
+                    <img src="img/cold-coffees.jpg" alt="">
+                </div>
+                <div class="cold-coffees-body">
+                    <h2>Cold Coffees</h2>
+                    <label>Our cold coffee is special with extra thick choclate </label>
+                </div>
+            </div>
+            <div class="frappucino-coffees">
+                <div class="frappucino-coffees-image">
+                    <img src="img/frappuccino.jpg" alt="">
+                </div>
+                <div class="frappucino-coffees-body">
+                    <h2>Frappucino Coffees</h2>
+                    <label>Keep Calm and drink Frappe !!!</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="shop" id="shop">
+        <div class="shop-header">
+            <h3>Shop</h3>
+            <h4>Hotspring Coffee Drinks</h4>
+        </div>
+        <div class="shop-box">
+            <div class="item-1">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/caramel-macchiato.jpg">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                        <label class="cash">Rs 100</label>
+                        <h3>Caramel Macchiato</h3>
+                        <label> Sometime compromise like Caramel Macchiato </label>
+                        <button class="add-to-cart-button" data-name="Caramel Macchiato" data-price="Rs 100">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/flat-white.png">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <label class="cash">Rs 200</label>
+                        <h3>Flat White</h3>
+                        <label>Flat white cofee makes the world go round.!!</label>
+                        <button class="add-to-cart-button" data-name="Flat White" data-price="200">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-3">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/chocolate-frappuccino.png">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                        <label class="cash">Rs 350</label>
+                        <h3>Chocolate Frappucino</h3>
+                        <label>Anything is good atleast as till the choclate is added in it!!.</label>
+                        <button class="add-to-cart-button" data-name="Chocolate Frappucino" data-price="Rs 350">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/frappe.jpg">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <label class="cash">Rs 150</label>
+                        <h3>Frappe</h3>
+                        <label>I dont give a Frappe !!.</label>
+                        <button class="add-to-cart-button" data-name="Frappe " data-price="Rs 150">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-5">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/caffe-mocha.png">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                        <label class="cash">Rs 250</label>
+                        <h3>Caffe Mocha</h3>
+                        <label>Cofee is a language itself.</label>
+                        <button class="add-to-cart-button" data-name="Cafee Mocha" data-price="Rs 250">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-6">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/vanilla-frappuccino.jpg">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <label class="cash">Rs 500</label>
+                        <h3>Vanilla Frappucino</h3>
+                        <label>Buy 1 and drink again !!</label>
+                        <button class="add-to-cart-button" data-name="Vanilla Frappucino" data-price="Rs 500">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-7">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/white-chocolate-mocha.jpg">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                        <label class="cash">Rs 200</label>
+                        <h3>White Chocolate Mocha</h3>
+                        <label>We should get some cofee !!</label>
+                        <button class="add-to-cart-button" data-name="White Choclate Mocha " data-price="Rs 200">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-8">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/ice-latte.jpg">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <label class="cash">Rs 300</label>
+                        <h3>Ice Latte</h3>
+                        <label>Never let anyone tell you it is cold ice cofee !<br/></label>
+                        <button class="add-to-cart-button" data-name="Ice Latte" data-price="Rs 300">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-8">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="layercofee.jpg">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                        <label class="cash">Rs 500</label>
+                        <h3>Cappucino</h3>
+                        <label>Lets drink some cappucino !!</label>
+                        <button class="add-to-cart-button" data-name="Cappucino" data-price="Rs 500">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-9">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="espresso,jpg.jpg">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                        <label class="cash">Rs 600</label>
+                        <h3>Espresso </h3>
+                        <label>We should get some cofee !!</label>
+                        <button class="add-to-cart-button" data-name="Espresso with cream " data-price="Rs 600">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-10">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="iced%20coffe.jpg">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                        <label class="cash">Rs 200</label>
+                        <h3>Iced Coffe</h3>
+                        <label>We should get some cofee !!</label>
+                        <button class="add-to-cart-button" data-name="Iced Cofee" data-price="Rs 200">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item-11">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="babajavacofee.png">
+                    </div>
+                    <div class="card-body">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                        <label class="cash">Rs 200</label>
+                        <h3>White Chocolate Mocha</h3>
+                        <label>We should get some cofee !!</label>
+                        <button class="add-to-cart-button" data-name="White Choclate Mocha " data-price="Rs 200">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact" id="contact">
+        <div class="contact-box">
+            <div class="contact-image">
+                <img src="contactus.jpg">
+            </div>
+        </div>
+        <div class="contact-box">
+            <div class="contact-body">
+                <form>
+                    <h2>Contact Us</h2>
+                    <div class="form-content">
+                        <input type="text" required>
+                        <span></span>
+                        <label>Username</label>
+                    </div>
+                    <div class="form-content">
+                        <input type="email" required>
+                        <span></span>
+                        <label>Email</label>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<div class="footer">
+        <div class="footer-box">
+            <div class="social-media">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+   
+            
+            </div>
+            <div class="brand">
+                <label>Hotspring <span>Coffee</span></label>
+    </div></div>
+ 
+        
+   <script>
+    // Function to add an item to the cart
+    function addToCart(itemName, itemPrice) {
+        const cartItems = document.getElementById("cart-items");
+        const cartTotal = document.getElementById("cart-total");
+
+        // Create a new list item for the cart
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `${itemName} - ${itemPrice} Rs`;
+
+        // Add the list item to the cart
+        cartItems.appendChild(listItem);
+
+        // Update the total price
+        const currentTotal = parseFloat(cartTotal.textContent);
+        cartTotal.textContent = (currentTotal + parseFloat(itemPrice)).toFixed(2);
+    }
+
+    // Function to clear the cart
+    function clearCart() {
+        const cartItems = document.getElementById("cart-items");
+        const cartTotal = document.getElementById("cart-total");
+
+        // Remove all items from the cart
+        while (cartItems.firstChild) {
+            cartItems.removeChild(cartItems.firstChild);
+        }
+
+        // Reset the total price
+        cartTotal.textContent = "0.00";
+    }
+
+    // Event listener for adding items to the cart
+    document.addEventListener("DOMContentLoaded", function () {
+        const addToCartButtons = document.querySelectorAll(".add-to-cart-button");
+
+        addToCartButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const itemName = this.dataset.name;
+                const itemPrice = this.dataset.price;
+
+                addToCart(itemName, itemPrice);
+            });
+        });
+
+        // Event listener for clearing the cart
+        const clearCartButton = document.getElementById("clear-cart");
+        clearCartButton.addEventListener("click", function () {
+            clearCart();
+        });
+    });
+</script>
+    
+</body>
+</html>
+</html>
